@@ -1,0 +1,30 @@
+plugins:
+  d_backup_dest_dir:
+    default: "/var/discourse/custom_backup"
+    client: true
+    type: string
+    description: "Destination directory to move the backup to"
+  d_backup_enable_daily_job:
+    default: true
+    client: false
+    type: bool
+    description: "Enable daily backup job"
+  d_backup_s3_enable:
+    default: true
+    client: false
+  d_backup_s3_access_key:
+    default: test
+    client: false
+  d_backup_s3_secret_key:
+    default: test
+    client: false
+    secret: true
+  d_backup_s3_region:
+    default: us-east-1
+    client: false
+  d_backup_s3_endpoint:
+    default: http://localhost:4566
+    client: false
+  d_backup_s3_bucket:
+    default: my-test-bucket
+    client: false
