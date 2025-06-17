@@ -1,1 +1,1 @@
-# __ProjectName__
+# discourse-plugin-custom-backups
