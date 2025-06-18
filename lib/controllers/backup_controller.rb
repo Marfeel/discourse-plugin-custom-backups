@@ -3,6 +3,7 @@ module BackupApi
       requires_plugin 'discourse-plugin-custom-backups'
 
       before_action :ensure_admin
+      skip_before_action :verify_authenticity_token, only: [:create]
 
       def create
         script_path = Rails.root.join("script", "run_local_backup.rb").to_s
