@@ -66,6 +66,18 @@ This will:
 
 ---
 
+## API Backups edpoint
+
+This endpoint allows triggering a manual backup of the Discourse instance via an HTTP POST request.
+
+```bash
+curl -X POST "http://discourse.site.com/discourse-plugin-custom-backups/run" \
+  -H "Api-Key: xxxxxxxxx" \
+  -H "Api-Username: user"
+```
+
+---
+
 ## Scheduled Backups (BETA)
 
 If `discourse_plugin_custom_backups_enable_daily_job` is enabled, Discourse will automatically run the backup script once per day via the Sidekiq scheduler.
