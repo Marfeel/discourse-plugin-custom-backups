@@ -19,5 +19,5 @@ after_initialize do
   Rails.logger.info "[d-backup] Script installed at: #{script_target}"
 
   # Load the scheduled job
-  require_relative "../lib/jobs/daily/d_backup_job"
+  load File.expand_path("../lib/jobs/daily/d_backup_job.rb", __FILE__)
 end
