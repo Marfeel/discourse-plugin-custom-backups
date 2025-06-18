@@ -4,7 +4,7 @@ module Jobs
     every 1.day
 
     def execute(args)
-      return unless SiteSetting.d_backup_enable_daily_job
+      return unless SiteSetting.discourse_plugin_custom_backups_enable_daily_job
 
       Rails.logger.info("[DBackupJob] Running external backup script...")
 

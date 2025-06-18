@@ -11,7 +11,7 @@ require_relative "../plugins/discourse-plugin-custom-backups/lib/custom_backup/l
 source_dir = Rails.root.join("public", "backups", "default").to_s
 
 # Destination path defined in the plugin settings
-plugin_setting = SiteSetting.d_backup_dest_dir
+plugin_setting = SiteSetting.discourse_plugin_custom_backups_dest_dir
 dest_dir = Rails.root.join(plugin_setting).to_s
 
 # Create destination directory if it doesn't exist
@@ -39,16 +39,16 @@ if backup.success && filename
   end
 
   # ==== Upload to S3 if enabled ====
-  if SiteSetting.d_backup_s3_enable
+  if SiteSetting.discourse_plugin_custom_backups_s3_enable
     s3_client = Aws::S3::Client.new(
-      region:             SiteSetting.d_backup_s3_region.presence      || 'us-east-1',
-      access_key_id:      SiteSetting.d_backup_s3_access_key.presence  || 'test',
-      secret_access_key:  SiteSetting.d_backup_s3_secret_key.presence  || 'test',
-      endpoint:           SiteSetting.d_backup_s3_endpoint.presence    || 'http://localhost:4566',
+      region:             SiteSetting.discourse_plugin_custom_backups_s3_region.presence      || 'us-east-1',
+      access_key_id:      SiteSetting.discourse_plugin_custom_backups_s3_access_key.presence  || 'test',
+      secret_access_key:  SiteSetting.discourse_plugin_custom_backups_s3_secret_key.presence  || 'test',
+      endpoint:           SiteSetting.discourse_plugin_custom_backups_s3_endpoint.presence    || 'http://localhost:4566',
       force_path_style:   true
     )
 
-    bucket     = SiteSetting.d_backup_s3_bucket.presence || 'my-test-bucket'
+    bucket     = SiteSetting.discourse_plugin_custom_backups_s3_bucket.presence || 'my-test-bucket'
     object_key = File.basename(dest_file)
 
     puts "[INFO] Uploading to S3 bucket '#{bucket}' as '#{object_key}'..."

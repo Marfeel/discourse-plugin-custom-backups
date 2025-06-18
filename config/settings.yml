@@ -1,48 +1,48 @@
 plugins:
-  d_backup_dest_dir:
+  discourse_plugin_custom_backups_dest_dir:
     default: "/var/discourse/custom_backup"
     client: true
     type: string
     description: "Local directory path where the backup file will be moved after creation."
 
-  d_backup_enable_daily_job:
+  discourse_plugin_custom_backups_enable_daily_job:
     default: true
     client: false
     type: bool
     description: "Enable or disable the daily scheduled backup job."
 
-  d_backup_s3_enable:
+  discourse_plugin_custom_backups_s3_enable:
     default: true
     client: false
     type: bool
     description: "Enable uploading backups to an Amazon S3-compatible service."
 
-  d_backup_s3_access_key:
+  discourse_plugin_custom_backups_s3_access_key:
     default: test
     client: false
     type: string
     description: "Access key ID for the S3-compatible storage."
 
-  d_backup_s3_secret_key:
+  discourse_plugin_custom_backups_s3_secret_key:
     default: test
     client: false
     type: string
     secret: true
     description: "Secret access key for the S3-compatible storage (hidden in UI)."
 
-  d_backup_s3_region:
+  discourse_plugin_custom_backups_s3_region:
     default: us-east-1
     client: false
     type: string
     description: "Region for the S3-compatible service (e.g., us-east-1)."
 
-  d_backup_s3_endpoint:
+  discourse_plugin_custom_backups_s3_endpoint:
     default: http://localhost:4566
     client: false
     type: string
     description: "Custom endpoint for the S3-compatible service (e.g., LocalStack or MinIO)."
 
-  d_backup_s3_bucket:
+  discourse_plugin_custom_backups_s3_bucket:
     default: my-test-bucket
     client: false
     type: string

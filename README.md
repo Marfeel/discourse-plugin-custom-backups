@@ -45,14 +45,14 @@ Available settings:
 
 | Setting                       | Description                                                                 |
 |------------------------------|-----------------------------------------------------------------------------|
-| `d_backup_dest_dir`          | Destination path for local backup files                                     |
-| `d_backup_enable_daily_job`  | Enables or disables the daily scheduled backup                              |
-| `d_backup_s3_enable`         | If enabled, also uploads the backup to an S3-compatible service             |
-| `d_backup_s3_access_key`     | S3 access key ID                                                            |
-| `d_backup_s3_secret_key`     | S3 secret access key (hidden in UI)                                        |
-| `d_backup_s3_region`         | AWS region for S3 bucket                                                    |
-| `d_backup_s3_endpoint`       | Custom endpoint for S3 (e.g., for local testing with MinIO or LocalStack)   |
-| `d_backup_s3_bucket`         | Name of the S3 bucket to upload backups to                                  |
+| `discourse_plugin_custom_backups_dest_dir`          | Destination path for local backup files                                     |
+| `discourse_plugin_custom_backups_enable_daily_job`  | Enables or disables the daily scheduled backup                              |
+| `discourse_plugin_custom_backups_s3_enable`         | If enabled, also uploads the backup to an S3-compatible service             |
+| `discourse_plugin_custom_backups_s3_access_key`     | S3 access key ID                                                            |
+| `discourse_plugin_custom_backups_s3_secret_key`     | S3 secret access key (hidden in UI)                                        |
+| `discourse_plugin_custom_backups_s3_region`         | AWS region for S3 bucket                                                    |
+| `discourse_plugin_custom_backups_s3_endpoint`       | Custom endpoint for S3 (e.g., for local testing with MinIO or LocalStack)   |
+| `discourse_plugin_custom_backups_s3_bucket`         | Name of the S3 bucket to upload backups to                                  |
 
 ---
 
@@ -74,7 +74,7 @@ This will:
 
 ## ⏰ Scheduled Backups
 
-If `d_backup_enable_daily_job` is enabled, Discourse will automatically run the backup script once per day via the Sidekiq scheduler.
+If `discourse_plugin_custom_backups_enable_daily_job` is enabled, Discourse will automatically run the backup script once per day via the Sidekiq scheduler.
 
 Make sure:
 - Sidekiq is running
@@ -85,7 +85,7 @@ Make sure:
 
 ## 📂 Output
 
-Backup files will be stored in the directory configured by `d_backup_dest_dir`.
+Backup files will be stored in the directory configured by `discourse_plugin_custom_backups_dest_dir`.
 
 Example:
 ```
