@@ -3,28 +3,47 @@ plugins:
     default: "/var/discourse/custom_backup"
     client: true
     type: string
-    description: "Destination directory to move the backup to"
+    description: "Local directory path where the backup file will be moved after creation."
+
   d_backup_enable_daily_job:
     default: true
     client: false
     type: bool
-    description: "Enable daily backup job"
+    description: "Enable or disable the daily scheduled backup job."
+
   d_backup_s3_enable:
     default: true
     client: false
+    type: bool
+    description: "Enable uploading backups to an Amazon S3-compatible service."
+
   d_backup_s3_access_key:
     default: test
     client: false
+    type: string
+    description: "Access key ID for the S3-compatible storage."
+
   d_backup_s3_secret_key:
     default: test
     client: false
+    type: string
     secret: true
+    description: "Secret access key for the S3-compatible storage (hidden in UI)."
+
   d_backup_s3_region:
     default: us-east-1
     client: false
+    type: string
+    description: "Region for the S3-compatible service (e.g., us-east-1)."
+
   d_backup_s3_endpoint:
     default: http://localhost:4566
     client: false
+    type: string
+    description: "Custom endpoint for the S3-compatible service (e.g., LocalStack or MinIO)."
+
   d_backup_s3_bucket:
     default: my-test-bucket
     client: false
+    type: string
+    description: "Name of the S3 bucket where backups will be uploaded."

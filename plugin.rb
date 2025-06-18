@@ -4,13 +4,20 @@
 # authors: Marfeel
 
 after_initialize do
-  script_target_path = Rails.root.join("script", "run_local_backup.rb")
-  script_source_path = File.expand_path("../templates/run_local_backup.rb", __FILE__)
+  # Define paths
+  script_source = File.expand_path("../templates/run_local_backup.rb", __FILE__)
+  script_target = Rails.root.join("script", "run_local_backup.rb")
 
-  FileUtils.mkdir_p(File.dirname(script_target_path))
-  FileUtils.cp(script_source_path, script_target_path)
-  FileUtils.chmod("+x", script_target_path)
-  Rails.logger.info "[d-backup] Copied run_local_backup.rb to #{script_target_path}"
+  # Ensure target directory exists
+  FileUtils.mkdir_p(File.dirname(script_target))
 
-  load File.expand_path("../lib/jobs/daily/d_backup_job.rb", __FILE__)
+  # Copy and make the script executable
+  FileUtils.cp(script_source, script_target)
+  FileUtils.chmod("+x", script_target)
+
+  # Log success
+  Rails.logger.info "[d-backup] Script installed at: #{script_target}"
+
+  # Load the scheduled job
+  require_relative "../lib/jobs/daily/d_backup_job"
 end

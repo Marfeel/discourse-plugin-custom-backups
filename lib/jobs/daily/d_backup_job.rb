@@ -1,8 +1,7 @@
-# lib/jobs/daily/d_backup_job.rb
 
 module Jobs
   class DBackupJob < ::Jobs::Scheduled
-    every 10.minutes
+    every 1.day
 
     def execute(args)
       return unless SiteSetting.d_backup_enable_daily_job
