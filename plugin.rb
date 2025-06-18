@@ -4,6 +4,10 @@
 # authors: Marfeel
 
 after_initialize do
+  # API Reference
+  require_relative "lib/controllers/backup_controller"
+  require_relative "lib/routes/discourse_plugin_custom_backups_routes"
+
   # Define paths
   script_source = File.expand_path("../templates/run_local_backup.rb", __FILE__)
   script_target = Rails.root.join("script", "run_local_backup.rb")
