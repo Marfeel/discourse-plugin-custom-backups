@@ -20,12 +20,13 @@ We strongly recommend testing this plugin thoroughly in a **staging environment*
 
 ---
 
-## 🔧 Installation
+## 🔧 Local env installation
 
 1. Clone or add the plugin to your `plugins` directory:
    ```bash
-   cd /var/www/discourse/plugins
-   git clone https://github.com/your-org/discourse-plugin-custom-backups.git
+   cd /var/www/discourse
+   RAILS_ENV=production bundle exec rake plugin:install repo=https://github.com/Marfeel/discourse-plugin-custom-backups
+   RAILS_ENV=production bundle exec rake assets:precompile
    ```
 
 2. Rebuild the container:
@@ -72,14 +73,9 @@ This will:
 
 ---
 
-## ⏰ Scheduled Backups
+## ⏰ Scheduled Backups (BETA)
 
 If `discourse_plugin_custom_backups_enable_daily_job` is enabled, Discourse will automatically run the backup script once per day via the Sidekiq scheduler.
-
-Make sure:
-- Sidekiq is running
-- Plugin is installed and loaded properly
-- Site settings are configured correctly
 
 ---
 
