@@ -1,4 +1,4 @@
-module ::BackupApi
+module BackupApi
     class BackupsController < ::ApplicationController
       requires_plugin 'discourse-plugin-custom-backups'
 
