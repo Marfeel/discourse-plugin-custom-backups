@@ -25,7 +25,7 @@ We strongly recommend testing this plugin thoroughly in a **staging environment*
 1. Clone or add the plugin to your `plugins` directory:
    ```bash
    cd /var/www/discourse/plugins
-   git clone https://github.com/your-org/d-backup.git
+   git clone https://github.com/your-org/discourse-plugin-custom-backups.git
    ```
 
 2. Rebuild the container:

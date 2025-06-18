@@ -3,7 +3,7 @@
 require 'fileutils'
 require 'aws-sdk-s3'
 require File.expand_path("../config/environment", __dir__)
-require_relative "../plugins/d-backup/lib/custom_backup/local_backuper"
+require_relative "../plugins/discourse-plugin-custom-backups/lib/custom_backup/local_backuper"
 
 # ==== Configuration: paths and environment ====
 

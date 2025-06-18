@@ -1,4 +1,4 @@
-# name: d-backup
+# name: discourse-plugin-custom-backups
 # about: Create custom backup file
 # version: 0.1
 # authors: Marfeel
@@ -16,7 +16,7 @@ after_initialize do
   FileUtils.chmod("+x", script_target)
 
   # Log success
-  Rails.logger.info "[d-backup] Script installed at: #{script_target}"
+  Rails.logger.info "[discourse-plugin-custom-backups] Script installed at: #{script_target}"
 
   # Load the scheduled job
   load File.expand_path("../lib/jobs/daily/d_backup_job.rb", __FILE__)
