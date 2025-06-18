@@ -20,7 +20,7 @@ We strongly recommend testing this plugin thoroughly in a **staging environment*
 
 ---
 
-## 🔧 Local env installation
+## Local env installation
 
 1. Clone or add the plugin to your `plugins` directory:
    ```bash
@@ -29,14 +29,7 @@ We strongly recommend testing this plugin thoroughly in a **staging environment*
    RAILS_ENV=production bundle exec rake assets:precompile
    ```
 
-2. Rebuild the container:
-   ```bash
-   ./launcher rebuild app
-   ```
-
----
-
-## 🛠️ Configuration
+## Configuration
 
 All plugin settings can be accessed from the Discourse admin panel:
 
@@ -57,7 +50,7 @@ Available settings:
 
 ---
 
-## ▶️ Manual Usage
+## Manual Usage
 
 To trigger a local backup manually from the server:
 
@@ -73,13 +66,13 @@ This will:
 
 ---
 
-## ⏰ Scheduled Backups (BETA)
+## Scheduled Backups (BETA)
 
 If `discourse_plugin_custom_backups_enable_daily_job` is enabled, Discourse will automatically run the backup script once per day via the Sidekiq scheduler.
 
 ---
 
-## 📂 Output
+## Output
 
 Backup files will be stored in the directory configured by `discourse_plugin_custom_backups_dest_dir`.
 
@@ -87,11 +80,5 @@ Example:
 ```
 /var/discourse/custom_backup/backup-2025-06-18-145320.tar.gz
 ```
-
----
-
-## 🤝 Contributing
-
-Pull requests and suggestions are welcome!
 
 ---
