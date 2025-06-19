@@ -47,3 +47,9 @@ plugins:
     client: false
     type: string
     description: "Name of the S3 bucket where backups will be uploaded."
+
+  discourse_plugin_custom_backups_s3_file_size:
+    default: 200
+    client: false
+    type: integer
+    description: "Multipart part size"
