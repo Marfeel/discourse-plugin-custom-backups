@@ -4,7 +4,7 @@ module CustomBackup
   class S3Uploader
     def self.upload(file_path)
       unless File.exist?(file_path)
-        Rails.logger.error("[S3Uploader] Archivo no encontrado: #{file_path}")
+        Rails.logger.error("[S3Uploader] File not found: #{file_path}")
         return
       end
 
@@ -24,7 +24,7 @@ module CustomBackup
       parts = []
       file = File.open(file_path, 'rb')
 
-      Rails.logger.info("[S3Uploader] Iniciando subida multipart a S3: #{file_path}")
+      Rails.logger.info("[S3Uploader] Starting upload to S3: #{file_path}")
 
       begin
         resp = s3.create_multipart_upload(bucket: bucket, key: key)
@@ -33,7 +33,7 @@ module CustomBackup
 
         until file.eof?
           part = file.read(chunk_size)
-          Rails.logger.info("[S3Uploader] Subiendo parte ##{part_number} (#{(part.bytesize / 1024.0 / 1024).round(1)} MB)...")
+          Rails.logger.info("[S3Uploader] Uploading part ##{part_number} (#{(part.bytesize / 1024.0 / 1024).round(1)} MB)...")
           part_resp = s3.upload_part(
             bucket: bucket,
             key: key,
@@ -52,10 +52,10 @@ module CustomBackup
           multipart_upload: { parts: parts }
         )
 
-        Rails.logger.info("[S3Uploader] Subida completada con #{parts.size} partes.")
+        Rails.logger.info("[S3Uploader] Uploaded on #{parts.size} parts.")
 
         File.delete(file_path)
-        Rails.logger.info("[S3Uploader] Archivo local eliminado: #{file_path}")
+        Rails.logger.info("[S3Uploader] Local file deleted: #{file_path}")
 
       rescue => e
         Rails.logger.error("[S3Uploader] Error: #{e.message}")
