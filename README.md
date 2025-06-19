@@ -47,7 +47,7 @@ Available settings:
 | `discourse_plugin_custom_backups_s3_region`         | AWS region for S3 bucket                                                    |
 | `discourse_plugin_custom_backups_s3_endpoint`       | Custom endpoint for S3 (e.g., for local testing with MinIO or LocalStack)   |
 | `discourse_plugin_custom_backups_s3_bucket`         | Name of the S3 bucket to upload backups to                                  |
-| `discourse_plugin_custom_backups_s3_file_size`      | Size of S3 part size (200MB By default)                                     |
+| `discourse_plugin_custom_backups_s3_file_size`      | Size of file part (200MB By default)                                        |
 
 ---
 
