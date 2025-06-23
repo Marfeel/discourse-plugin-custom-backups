@@ -64,6 +64,8 @@ This will:
 - Move it to the configured destination
 - Optionally upload it to S3 if enabled
 
+Note: Run this command logged as discourse for avoid directory ownership problems.
+
 ---
 
 ## API Backups edpoint
