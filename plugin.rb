@@ -22,6 +22,4 @@ after_initialize do
   # Log success
   Rails.logger.info "[discourse-plugin-custom-backups] Script installed at: #{script_target}"
 
-  # Load the scheduled job
-  load File.expand_path("../lib/jobs/daily/discourse_plugin_custom_backups_job.rb", __FILE__)
 end

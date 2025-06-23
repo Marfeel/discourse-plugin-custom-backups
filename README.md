@@ -40,7 +40,6 @@ Available settings:
 | Setting                       | Description                                                                 |
 |------------------------------|-----------------------------------------------------------------------------|
 | `discourse_plugin_custom_backups_dest_dir`          | Destination path for local backup files                                     |
-| `discourse_plugin_custom_backups_enable_daily_job`  | Enables or disables the daily scheduled backup                              |
 | `discourse_plugin_custom_backups_s3_enable`         | If enabled, also uploads the backup to an S3-compatible service             |
 | `discourse_plugin_custom_backups_s3_access_key`     | S3 access key ID                                                            |
 | `discourse_plugin_custom_backups_s3_secret_key`     | S3 secret access key (hidden in UI)                                        |
@@ -76,12 +75,6 @@ curl -X POST "http://discourse.site.com/discourse-plugin-custom-backups/run" \
   -H "Api-Key: xxxxxxxxx" \
   -H "Api-Username: user"
 ```
-
----
-
-## Scheduled Backups (BETA)
-
-If `discourse_plugin_custom_backups_enable_daily_job` is enabled, Discourse will automatically run the backup script once per day via the Sidekiq scheduler.
 
 ---
 
