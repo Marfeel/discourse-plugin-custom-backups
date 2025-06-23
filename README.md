@@ -1,9 +1,9 @@
 # 🛡️ Local Backup Plugin for Discourse
+**Discourse Custom Backup Location Plugin**
 
-This plugin adds the ability to create **local backups** of your Discourse instance without uploading them to S3 or deleting the resulting files.
+This plugin allows you to define a custom backup location on the filesystem or upload backups to a custom S3 endpoint, independent from Discourse's default S3 configuration.
 
-It is useful for custom backup strategies, local storage, or development/testing scenarios.
-
+It is useful for implementing custom backup strategies, using alternative storage solution
 ---
 
 ## ⚠️ Disclaimer
