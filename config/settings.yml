@@ -5,12 +5,6 @@ plugins:
     type: string
     description: "Local directory path where the backup file will be moved after creation."
 
-  discourse_plugin_custom_backups_enable_daily_job:
-    default: false
-    client: false
-    type: bool
-    description: "Enable or disable the daily scheduled backup job."
-
   discourse_plugin_custom_backups_s3_enable:
     default: false
     client: false
