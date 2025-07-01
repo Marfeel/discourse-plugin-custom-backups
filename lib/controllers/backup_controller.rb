@@ -35,7 +35,7 @@ module BackupApi
             }
           end
 
-          render json: backup_list
+          render json: backup_list, layout: false
         rescue Aws::S3::Errors::ServiceError => e
           render json: { error: "Error al obtener los backups: #{e.message}" }, status: 500
         end
