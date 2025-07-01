@@ -27,10 +27,9 @@ module BackupApi
 
           backup_list = objects.map do |obj|
             {
-              key: obj.key,
+              filename: obj.key,
               last_modified: obj.last_modified,
               size: obj.size,
-              url: "#{SiteSetting.discourse_plugin_custom_backups_s3_endpoint}/#{bucket}/#{obj.key}"
             }
           end
 
