@@ -14,13 +14,13 @@ module BackupApi
       end
 
       def index
-        bucket = SiteSetting.discourse_plugin_custom_backups_s3_bucket.presence || 'my-test-bucket'
+        bucket = SiteSetting.discourse_plugin_custom_backups_s3_bucket.presence
 
         s3 = Aws::S3::Client.new(
-          region:            SiteSetting.discourse_plugin_custom_backups_s3_region.presence     || 'us-east-1',
-          access_key_id:     SiteSetting.discourse_plugin_custom_backups_s3_access_key.presence || 'test',
-          secret_access_key: SiteSetting.discourse_plugin_custom_backups_s3_secret_key.presence || 'test',
-          endpoint:          SiteSetting.discourse_plugin_custom_backups_s3_endpoint.presence   || 'http://localhost:4566',
+          region:            SiteSetting.discourse_plugin_custom_backups_s3_region.presence,
+          access_key_id:     SiteSetting.discourse_plugin_custom_backups_s3_access_key.presence,
+          secret_access_key: SiteSetting.discourse_plugin_custom_backups_s3_secret_key.presence,
+          endpoint:          SiteSetting.discourse_plugin_custom_backups_s3_endpoint.presence,
           force_path_style:  true
         )
 
